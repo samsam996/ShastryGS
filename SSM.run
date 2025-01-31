@@ -1,0 +1,55 @@
+#!/bin/bash
+#SBATCH -q serial
+#SBATCH -e ./job-%N-%j.error
+#SBATCH -o ./job-%N-%j.out
+#SBATCH --nodes 1
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 1
+#SBATCH --time 2-23:10:00
+#SBATCH --mem 6G
+
+export SCR=/scratch/snyckees/
+export DAT=/home/snyckees/anisotropic_ssm
+export RES=/home/snyckees/RESULTS/$SLURM_JOB_ID/
+
+echo "***** START OF JOB ***** "
+
+cd $SCR
+mkdir $SLURM_JOB_ID
+cd ./$SLURM_JOB_ID
+
+cp -a $DAT/. .
+
+module purge
+module load gcc julia/1.8.3
+
+echo STARTING AT `date`
+
+D="3"
+hz="${h_val}"
+hx="0.00"
+Delta="2.00"
+J1="1.00"
+J2="2.40"
+N="6"
+Jx="1.00"
+Jy="1.00"
+Jz="0.00"
+model="XYZ"
+
+julia -t 1 main.jl "$D" "$J1" "$J2" "$Delta" "$hx" "$hz" "$N" "$Jx" "$Jy" "$Jz" "$model"
+
+echo FINISHED at `date`
+
+mkdir -p $RES
+if [ "$model" == "XY" ]; then
+    cp -r $SCR/$SLURM_JOB_ID/Results/LocalTensors_N${N}_J1${J1}_J2${J2}_Delta${Delta}_D${D}_hz${hz}_hx${hx}.jld2 $DAT/Results
+    cp -r $SCR/$SLURM_JOB_ID/Results/LocalTensors_N${N}_J1${J1}_J2${J2}_Delta${Delta}_D${D}_hz${hz}_hx${hx}.mat $DAT/Results
+else
+    cp -r $SCR/$SLURM_JOB_ID/Results/LocalTensors_N${N}_J1${J1}_J2${J2}_Jx${Jx}_Jy${Jy}_Jz${Jz}_D${D}_hz${hz}_hx${hx}.jld2 $DAT/Results
+    cp -r $SCR/$SLURM_JOB_ID/Results/LocalTensors_N${N}_J1${J1}_J2${J2}_Jx${Jx}_Jy${Jy}_Jz${Jz}_D${D}_hz${hz}_hx${hx}.mat $DAT/Results
+fi
+
+
+echo " ***** END OF JOB ***** "
+

@@ -1,0 +1,15 @@
+name = "ShastryGS"
+uuid = "be7baf58-ec3d-4017-bda5-d8d0d45e291b"
+authors = ["samsam996 <samuel.nyckees@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+ITensors = "9136182c-28ba-11e9-034c-db9fb085ebd5"
+JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+KrylovKit = "0b1a1467-8014-51b9-945f-bf0ae24f4b77"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
+MKL = "33e6dc65-8f57-5167-99aa-e5a354878fb2"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
