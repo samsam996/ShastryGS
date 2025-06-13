@@ -3,7 +3,10 @@
 
 function OBC_PEPS_ONES(tens_A,cxd,cyd,gt::Matrix{Symbol},physical_legs, N::Int64)
 
-    
+    """
+        Set the boundary condition for the iPEPS simulations. 
+    """
+
     f(x) = mod(x-1,N) + 1
 
     C = [lattice(N) for k = 1:4]

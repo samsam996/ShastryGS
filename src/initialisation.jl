@@ -5,6 +5,14 @@
 function declare_indices(gt::Matrix{Symbol},N::Int64)
 
 
+    """
+        Initialise the iPEPS tensors. 
+
+        ARGS: 
+            gt: grid of tensors
+            N: size of the unit cell
+    """
+
     f(x) = mod(x-1,N) + 1
     
     physical_legs = lattice_ind("physical")

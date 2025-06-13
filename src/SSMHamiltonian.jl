@@ -2,6 +2,20 @@
 
 function SSMHamiltonian(gt::Matrix{Symbol},physical_legs,nsu::Float64,parameters::Dict)
 
+    """
+        Gives back the trotter gates for the models. 
+            gx: trotter gates defined in the x-direction 
+            gy: trotter gates defined in the y-direction 
+            gmu: trotter gates defined on a single site. 
+
+        ARGS: 
+            parameters: the parameters of the model 
+            nsu: time-step 
+            physical_legs: the physical legs of the model
+            gt: the grid of the model, e.g. gt[i,j] = :a_ij
+    """
+
+
     J1 = parameters["J1"]
     J2 = parameters["J2"]
     hz = parameters["hz"]

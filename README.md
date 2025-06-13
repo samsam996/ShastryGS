@@ -29,11 +29,12 @@ $$
 H = \sum J_1 (Jx S_x S_x + Jy S_y S_y + Jz S_z S_z) + h_x S_x + h_z S_z
 $$
 
-To run the simulations, 
+To run the simulations, type 
 
 ```
 include("main.jl")
 ```
+this perform the imaginary time evolution with time-step $d\beta$ and parameters defined in the same file. If the simulation with those parameters has already been performed for bond dimension $D$ or $D-1$, we will use the results of the previous simulation for the initial state. Otherwise, the simulations will start with a random product state. 
 
 or 
 ```

@@ -2,6 +2,10 @@
 
 function invert_diag_sqrt(lambda::ITensor)
 
+    """
+        Computes the square of the inverse of a diagonal tensor
+    """
+
     index = inds(dag(lambda))
     inv_lambda_sqrt = ITensor(index)
     N = size(lambda)[1];

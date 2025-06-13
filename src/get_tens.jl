@@ -1,6 +1,5 @@
 
 
-# include("simple_update_evolution/diag_sqrt.jl")
 
 function get_tens(Gamma,lambdax,lambday,physical_legs,gt,N)
 
@@ -101,7 +100,6 @@ function get_tens(Gamma,lambdax,lambday,physical_legs,gt,N)
     
         end
     end
-    
 
     return tens_a, tens_A, cx, cy
 

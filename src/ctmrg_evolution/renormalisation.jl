@@ -2,6 +2,9 @@
 
 function renormalisation!(C,T,gt::Matrix{Symbol},N::Int64)
 
+    """
+        Renormalise the tensors environement tensors to keep the norm under control. 
+    """
     
     for i = 1:N
         for j = 1:N
