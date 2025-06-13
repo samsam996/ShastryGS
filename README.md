@@ -1,7 +1,7 @@
 # Ground state of the anisotropic Shastry-Sutherland model
 
 
-Computes the ground state wavefunction for the the anisotropic Shastry-Sutherland interaction $J_1, J2, ..$. We assume the ground state to have a $N\times N$ unit cell in the dimer basis. 
+Computes the ground state wavefunction for the the anisotropic Shastry-Sutherland interaction $J_1, J2, ..$. We assume the ground state to have a stripped $N\times N$ unit cell in the dimer basis. We show the unit cell for the case $N = 6$ in the /Figures folder.
 
 The optimisation of the local tensors is done using the simple update. 
 
