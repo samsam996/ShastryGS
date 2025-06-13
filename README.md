@@ -1,7 +1,7 @@
 # Ground state of the anisotropic Shastry-Sutherland model
 
 
-Computes the ground state wavefunction for the the anisotropic Shastry-Sutherland with interaction $J_1, J_2, ..$. We assume the ground state to have a stripped $N\times N$ unit cell in the dimer basis. We illustrate the unit cell for the case $N = 6$ in the /Figures folder.
+Computes the ground state wavefunction for the the anisotropic Shastry-Sutherland with interaction $J_1, J_2, \ldots $. We assume the ground state to have a stripped $N\times N$ unit cell in the dimer basis. We illustrate the unit cell for the case $N = 6$ in the /Figures folder.
 
 The optimisation of the local tensors is done using the simple update. 
 
@@ -36,7 +36,7 @@ include("main.jl")
 ```
 this perform the imaginary time evolution with time-step $d\beta$ and parameters defined in the same file. If the simulation with those parameters has already been performed for bond dimension $D$ or $D-1$, we will use the results of the previous simulation for the initial state. Otherwise, the simulations will start with a random product state. 
 
-To run the code HPC environments, run
+To run the code on HPC environments, run
 
 ```
 sbatch SSM.run
