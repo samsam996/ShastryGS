@@ -11,7 +11,7 @@ To start the environement
 ```
 julia --project=.
 using Pkg
-Pkg.instantiate("ShastryGS")
+Pkg.instantiate()
 ```
 
 
