@@ -1,18 +1,40 @@
 # Ground state of the anisotropic Shastry-Sutherland model
 
-Computes the ground state wavefunction for the anisotropic Shastry-Sutherland model with iPEPS and simple update in the dimer basis. 
 
-$N$ is the length of the unit cell in the dimer basis, it can take N = (2,6,8). $D$ is the bond dimension of the local tensor, $J_2$ is the intra dimer interaction, $J_1$ the interdimer interaction. 
+Computes the ground state wavefunction for the the anisotropic Shastry-Sutherland interaction $J_1, J2, ..$. We assume the ground state to have a $N\times N$ unit cell in the dimer basis. 
 
-Two different models ar possible, the XY 
+The optimisation of the local tensors is done using the simple update. 
+
+By mapping the dimer to local tensors, the wavefunction is written as an infinite tensor network on the square lattice. The overlap and observables are then computed by using the CTMRG algorithm.
+
+To start the environement 
+'''
+julia --project=.
+using Pkg
+Pkg.instantiate("ShastryGS")
+'''
+
+The tensors are stored in the /Results folder in a jld2 format, while the observables are stored in the /Results folder in .mat format.
+
+Two different models are possible, the $XY$ model
 
 $$
 H = \sum J_1 (S_x S_x + \Delta (S_y S_y + S_z S_z)) + h_x S_x + h_z S_z
 $$
 
-and XYZ model
+or $XYZ$ model
 
 $$
 H = \sum J_1 (Jx S_x S_x + Jy S_y S_y + Jz S_z S_z) + h_x S_x + h_z S_z
 $$
 
+To run the simulations, 
+
+'''
+include("main.jl")
+'''
+or 
+'''
+sbatch SSM.run
+''''
+for HPC environments
