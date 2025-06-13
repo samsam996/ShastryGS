@@ -8,11 +8,12 @@ The optimisation of the local tensors is done using the simple update.
 By mapping the dimer to local tensors, the wavefunction is written as an infinite tensor network on the square lattice. The overlap and observables are then computed by using the CTMRG algorithm.
 
 To start the environement 
-'''
+```
 julia --project=.
 using Pkg
 Pkg.instantiate("ShastryGS")
-'''
+```
+
 
 The tensors are stored in the /Results folder in a jld2 format, while the observables are stored in the /Results folder in .mat format.
 
@@ -30,11 +31,13 @@ $$
 
 To run the simulations, 
 
-'''
+```
 include("main.jl")
-'''
+```
+
 or 
-'''
+```
 sbatch SSM.run
-''''
+```
+
 for HPC environments
