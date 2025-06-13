@@ -36,9 +36,14 @@ include("main.jl")
 ```
 this perform the imaginary time evolution with time-step $d\beta$ and parameters defined in the same file. If the simulation with those parameters has already been performed for bond dimension $D$ or $D-1$, we will use the results of the previous simulation for the initial state. Otherwise, the simulations will start with a random product state. 
 
-or 
+To run the code HPC environments, run
+
 ```
 sbatch SSM.run
 ```
 
-for HPC environments
+or
+
+```
+sbatch submit_bash.sh
+```
