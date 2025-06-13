@@ -128,9 +128,21 @@ function simpleupdate(dbetasu::Float64,parameters::Dict,modit::Int64)
 end
 
 
-
-
 function SU(parameters)
+
+    """
+        Performs the imaginary time evolution until either convergence of the energy, or when the energy increases again 
+
+        ARGS: 
+            J1,J2, hx, hz..: different coupling constant
+            D : bond dimension 
+            h : magentic field in the z direction 
+            symmetry : either "" (no symmetry) or U1 
+            dbeta : time-step of the evolution 
+            chi : bond dimension of the corner transfer matrix algorithm 
+            modit : will compute the energy at every modit time step
+
+    """
 
     dbetasu = parameters["dbeta"]
     J1 = parameters["J1"]
@@ -142,10 +154,12 @@ function SU(parameters)
     model = parameters["model"]
     modit = parameters["modit"]
     N = parameters["N"]
+    Jx = parameters["Jx"]
+    Jy = parameters["Jy"]
+    Jz = parameters["Jz"]
+    Delta = parameters["Delta"]
 
-    # load_ctm(N)
-
-
+    
     Gamma, lambdax, lambday, gt, gg, physical_legs, magnex, magney, magnez, energie, Ps, it, err, xi = simpleupdate(dbetasu,parameters,modit)
 
     if model == "XY"

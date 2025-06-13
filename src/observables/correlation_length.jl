@@ -4,10 +4,10 @@ function correlation_length(C,T,gt,N)
 
     f(x) = mod(x-1,N) + 1
 
-    xi2 = zeros(N,N)
-    xi3 = zeros(N,N)
-    xi4 = zeros(N,N)
-    dq = zeros(N,N)
+    xi2 = zeros(N,1)
+    xi3 = zeros(N,1)
+    xi4 = zeros(N,1)
+    dq = zeros(N,1)
 
     for i = 1:N
         for j = 1:1
@@ -50,7 +50,7 @@ function correlation_length(C,T,gt,N)
                 xi4[i,j] = -log(abs(val[4])/abs(val[1]));
             end
             if length(val) > 1
-            xi2[i,j] = -log(abs(val[2])/abs(val[1]));
+                xi2[i,j] = -log(abs(val[2])/abs(val[1]));
                 dq[i,j] = abs(angle(val[2]))
             end
 

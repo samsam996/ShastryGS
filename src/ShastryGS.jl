@@ -3,7 +3,6 @@
 module ShastryGS
     
     # Dependencies
-    using MKL
     using FileIO
     using JLD2
     using KrylovKit
