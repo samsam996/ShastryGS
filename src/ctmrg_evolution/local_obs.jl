@@ -2,8 +2,7 @@
 
 
 
-function local_obs(C,T,tens_a,tens_A,cxd,
-    cyd,gt::Matrix{Symbol},physical_legs,i::Int64,j::Int64,obs::Matrix{ComplexF64})
+function local_obs(C,T,tens_a,tens_A,cxd,cyd,gt::Matrix{Symbol},physical_legs,i::Int64,j::Int64,obs::Matrix{ComplexF64})
 
     N = size(gt)[1]
     f(x) = mod(x-1,N)+1;

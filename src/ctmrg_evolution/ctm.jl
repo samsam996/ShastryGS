@@ -3,8 +3,8 @@
 include("update.jl")
 include("local_obs.jl")
 
-function ctm!(tens_a,tens_A,cxd,cyd,
-  gt::Matrix{Symbol},physical_legs,chi::Int,precision::Float64,C,T,N::Int64)  
+function ctm!(tens_a,tens_A,cxd,cyd, gt::Matrix{Symbol},physical_legs,chi::Int,precision::Float64,C,T,N::Int64)  
+
 
   sx = 1/2*[0 1; 1 0]; sy = 1/2*[0 -1im; 1im 0]; sz = 1/2*[1 0; 0 -1]; id = [1 0; 0 1];
   kk = 0;
