@@ -11,6 +11,7 @@ To start the environement
 ```
 julia --project=.
 using Pkg
+Pkg.activate(".")
 Pkg.instantiate()
 ```
 
