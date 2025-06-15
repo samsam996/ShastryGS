@@ -7,7 +7,7 @@ The optimisation of the local tensors is done using the simple update.
 
 By mapping the dimer to local tensors, the wavefunction is written as an infinite tensor network on the square lattice. The overlap and observables are then computed by using the CTMRG algorithm.
 
-To start the environement 
+To start the environement with julia 1.8
 ```
 julia --project=.
 using Pkg
